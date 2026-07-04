@@ -1,0 +1,9 @@
+.DS_Store
+.venv/
+
+# データや出力結果
+data/
+result/
+
+# pythonのキャッシュデータ
+**/__pycache__/
