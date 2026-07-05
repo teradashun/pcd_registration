@@ -61,7 +61,13 @@ def draw_registration_result(
     ax.set_xlabel("X (m)")
     ax.set_ylabel("Y (m)")
     ax.set_zlabel("Z (m)")
-    ax.set_title("Registration Result")
+
+    if method == "none":
+        ax.set_title("Initial Alignment")
+    elif method == "centroid":
+        ax.set_title("Global_Registration Result (Centroid Alignment)")
+    elif method == "fpfh":
+        ax.set_title("Global_Registration Result (FPFH + RANSAC)")
 
     # 3D空間のスケール（アスペクト比）を等倍に揃えて歪みを防ぐ
     all_points = np.vstack([target_points[::skip], transformed_source_points[::skip]])
